@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en" data-theme='light' set>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- lato font by google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@400..700&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Lexend:wght@100..900&family=Manrope:wght@200..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Nothing+You+Could+Do&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <!-- tailwind and daisy ui cdn link -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.22/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awesome cdn link -->
+    <script src="https://kit.fontawesome.com/caf423a0ab.js" crossorigin="anonymous"></script>
+    <title>Peddy</title>
+    <style>
+        .lato-font {
+            font-family: "Lato", serif;
+        }
+
+        .active {
+            background-color: #0E7A811A;
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .modal_hidden {
+            display: none;
+        }
+
+        ;
+    </style>
+</head>
+
+<body class="lato-font">
+
+    <!-- header section start -->
+    <header class="container lg:w-[1320px] w-10/12 mx-auto mt-16">
+
+        <!-- navigation bar start -->
+        <nav class="flex items-center justify-between">
+            <div class="flex items-center gap-3 cursor-pointer">
+                <img src="./images/logo.webp" alt="">
+                <h1 class="text-[32px] font-black">Peddy</h1>
+            </div>
+            <div class="flex items-center gap-8 text-[#13131399]">
+                <a href="">Home</a>
+                <a href="">Shop</a>
+                <a href="">Contact</a>
+            </div>
+            <div
+                class="px-4 py-4 cursor-pointer rounded-[32px] border border-[#0E7A8133] hover:bg-[#0E7A811A] transition duration-500">
+                <img src="./icons/people.png" alt="">
+            </div>
+        </nav>
+        <!-- navigation bar start -->
+
+        <!-- banner section start -->
+        <div class="text-center mt-[60px]">
+            <h2 class="text-[#13131399] text-2xl font-bold">Bringing Families Together ❤️‍🔥</h2>
+            <h1 class="text-7xl font-black mt-6 leading-snug">Your Path to Adoption <br> Starts Here</h1>
+            <p class="text-[#131313] mt-6">It is a long established fact that a reader will be distracted by the
+                readable content of a page when looking <br> at its layout. The point of using Lorem Ipsum is that it
+                has a.</p>
+            <button onclick="scroll_to_section()"
+                class="text-xl font-bold text-white bg-[#0FAE99] hover:bg-[#0E7A81] px-8 py-4 rounded-xl transition duration-500 mt-8">View
+                More</button>
+            <div class="flex justify-center mt-12">
+                <img src="./images/pet.webp" alt="">
+            </div>
+        </div>
+        <!-- banner section end -->
+    </header>
+    <!-- header section end -->
+
+    <!-- main section start -->
+    <main id="main-section" class="container lg:w-[1320px] w-10/12 mx-auto mt-28">
+        <section>
+            <div class="text-center">
+                <h1 class="text-[40px] font-black">Adopt Your Best Friend</h1>
+                <p class="text-[#131313B3] mt-6">It is a long established fact that a reader will be distracted by the
+                    readable content of a <br> page when looking at its layout. The point of using Lorem Ipsum is that
+                    it has a.</p>
+            </div>
+            <div id="pet_category_container" class="flex flex-wrap gap-6 justify-between">
+
+            </div>
+
+
+            </div>
+            <div class="flex justify-between items-center mt-8">
+                <h4 class="text-2xl font-black">Best Deal For you</h4>
+
+                <button id="sort_by_price"
+                    class="text-xl font-bold text-white bg-[#0FAE99] hover:bg-[#0E7A81] px-8 py-4 rounded-xl transition duration-500">Sort
+                    by Price</button>
+            </div>
+        </section>
+
+        <!-- best deals for you section start -->
+        <div class="mt-8 flex justify-center">
+            <span id="spinner" class="loading loading-dots loading-lg"></span>
+        </div>
+        <section class="grid grid-cols-4 lg:gap-0 mt-8">
+
+            <!-- details part -->
+            <div id="pet_container" class=" grid grid-cols-1 lg:grid-cols-3 col-span-3 gap-6">
+
+            </div>
+            <!-- show part -->
+            <div class="col-span-1">
+                <div class="border border-[#1313131A] p-5 rounded-xl">
+                    <div id="show_container" class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                        <!-- <div >
+
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- best deals for you section end -->
+
+
+    </main>
+    <!-- main section end -->
+
+    <!-- Modal Structure -->
+    <!-- Modal -->
+    <!-- Modal -->
+    <div id="adopt_modal" class="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center hidden">
+        <div class="bg-white p-6 rounded-lg shadow-lg w-[400px] text-center">
+            <img src="spinner.gif" alt="" />
+            <p class="text-3xl font-bold mt-4">Congress Adopted! 🎉</p>
+            <p class="text-lg font-bold my-4">Adoption Process is Start For Your Pet</p>
+            <span id="countdown" class="text-5xl font-bold text-red-500">3</span>
+        </div>
+    </div>
+
+
+
+    <!-- Open the modal using ID.showModal() method -->
+    <button class="btn hidden" onclick="my_modal_5.showModal()" disabled>open modal</button>
+    <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box">
+            <div id="modal_content">
+
+
+
+            </div>
+            <div class="modal-action">
+                <form method="dialog">
+                    <!-- if there is a button in form, it will close the modal -->
+                    <button class="btn">Close</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+
+    <!-- footer section start -->
+    <footer class="bg-[#131313] ">
+        <div class="container lg:w-[1320px] w-10/12 mx-auto mt-28 py-28">
+            <div class="flex flex-col lg:flex-row lg:justify-between text-center lg:text-left space-y-16 lg:space-y-0">
+                <div class="space-y-6">
+                    <div class="flex items-center gap-3 cursor-pointer lg:justify-start justify-center">
+                        <img src="./images/logo.webp" alt="">
+                        <h1 class="text-[32px] font-black text-white">Peddy</h1>
+                    </div>
+                    <div class="text-[#FFFFFFE6] space-y-3">
+                        <p>Location: av. Washington 165, NY CA 54003</p>
+                        <p>Phone: +31 85 964 47 25</p>
+                        <p>Email: info@yourdomain.com</p>
+                        <p>Openings hours: 9.00 AM - 5.00 PM</p>
+                    </div>
+                    <div class="flex items-center justify-center lg:justify-start gap-8 mt-3">
+                        <img src="./icons/facebook.png" alt="">
+                        <img src="./icons/x.png" alt="">
+                        <img src="./icons/youtube.png" alt="">
+                        <img src="./icons/instagram.png" alt="">
+                    </div>
+                </div>
+                <div class="space-y-6">
+                    <p class="text-[18px] font-bold text-white">Useful Links</p>
+                    <div class="space-y-3 text-[#FFFFFF99]">
+                        <p>Home</p>
+                        <p>Contact</p>
+                        <p>About Us</p>
+                        <p>Animals</p>
+                    </div>
+                </div>
+                <div class="">
+                    <p class="text-[18px] font-bold text-white">Drop a Message</p>
+                    <div class="flex flex-col mt-8">
+                        <input class="bg-[#FFFFFF0D] rounded-xl px-[17px] py-[15px] text-[#FFFFFF99]" type="email"
+                            name="" id="" placeholder="Enter your email">
+                        <button
+                            class="px-8 py-4 bg-[#0E7A81] text-white rounded-xl text-xl font-bold mt-4">Subscribe</button>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="flex justify-between">
+
+
+                <div></div> -->
+        </div>
+        </div>
+    </footer>
+    <!-- footer section end -->
+
+
+    <script src="./JS/peddy.js"></script>
+
+</body>
+
+</html>
